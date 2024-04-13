@@ -1,0 +1,35 @@
+<form [formGroup]="form" ><!--variable form  type submit fct onsub() su'on click boutton-->
+    <mat-form-field>
+        <mat-label>TYPE</mat-label>
+        <input matInput placeholder="TYPE" formControlName="type">
+      </mat-form-field>
+    <br>
+      <mat-form-field>
+        <mat-label>TITLE</mat-label>
+        <input matInput placeholder="titre" formControlName="titre">
+      </mat-form-field>
+    <br>
+
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="createdDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+      
+ <br>
+      
+     
+      <mat-form-field>
+        <mat-label>lien</mat-label>
+        <input matInput placeholder="lien" formControlName="lien">
+      </mat-form-field>
+      <br>
+      <mat-dialog-actions>
+        <button class="mat-raised-button"(click)="close()">Close</button>
+        <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+    </mat-dialog-actions>
+    
+    </form>
