@@ -15,6 +15,8 @@ export class ArticleFormComponent {
 
 this.name1=data.type;
 this.name2=data.titre;
+this.name3=data.createdDate;
+this.name=data.lien;
 console.log(this.name);
 
   }
@@ -35,8 +37,8 @@ console.log(this.name);
 
     type:new FormControl(this.name1,[Validators.required]),
     titre:new FormControl(this.name2,[Validators.required]),
-    createdDate:new FormControl(null,[Validators.required]),
-    lien:new FormControl(null,[Validators.required])
+    createdDate:new FormControl(this.name3,[Validators.required]),
+    lien:new FormControl(this.name,[Validators.required])
    })
   
   
