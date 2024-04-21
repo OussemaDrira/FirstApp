@@ -34,12 +34,9 @@ export class ArticleService {
     //this.tab.filter(item=>item.id==id)[0]   ?? null)
   return this.httpClient.get<Article>(`http://localhost:3000/articles/${id}`);
   }
-  onedit(id:string,m:any):Observable<any>{
-    const m1=this.tab.findIndex(item=>item.id==id);
-    this.tab[m1]={id:id,...m,
-      createdDate:new Date().toISOString};
-    this.tab[m1].createdDate = new Date();
-    return  new Observable(observer => observer.next());
+  onedit(id:string,articleTosave:string ):Observable<any>{
+    return this.httpClient.put<void>(`http://localhost:3000/articles/${id}`,articleTosave)
 
   }
+
 }

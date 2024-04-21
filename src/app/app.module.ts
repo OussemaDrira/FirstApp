@@ -33,6 +33,7 @@ import { ArticleFormComponent } from './article-form/article-form.component';
 import {MatSort, MatSortModule} from '@angular/material/sort';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { EventComponent } from './event/event.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     EventsComponent,
     LoginComponent,
     ArticleFormComponent,
+    EventComponent,
     
    
   ],

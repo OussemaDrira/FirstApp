@@ -17,6 +17,7 @@ this.name1=data.type;
 this.name2=data.titre;
 this.name3=data.createdDate;
 this.name=data.lien;
+this.idcourant=data.id;
 console.log(this.name);
 
   }
@@ -45,16 +46,23 @@ console.log(this.name);
 }
 save() {
   this.dialogRef.close(this.form.value);
-  console.log(this.form.value);
+  if(this.idcourant){
+    (this.MS.onedit(this.idcourant,this.form.value).subscribe(()=>
+    this.router.navigate(['/articles']))
+  )}
+  else {
+ console.log(this.form.value);
   this.MS.ONsave(this.form.value).subscribe(()=>{
     this.router.navigate(['/articles'])
   }
+ 
+  )}}
 
   //afficher le table au des articles
   
  
   
-)}
+
 
 close() {
   this.dialogRef.close();
